@@ -52,22 +52,22 @@ I expect that you already understand derivatives. If not, please quickly read th
 
 Imagine that you have a function $$f(x) = x^2$$ whose graph is
 
-![f(x) = x^2 graph]({{ site.url }}/assets/x2.png)
+![f(x) = x^2 graph](/assets/x2.png)
 
 and whose derivative at $$x=1$$ is
 
-![f(x) = x^2 graph]({{ site.url }}/assets/2x-1.png)
+![f(x) = x^2 graph](/assets/2x-1.png)
 
 and whose derivative at $$x=-1$$ is
 
-![f(x) = x^2 graph]({{ site.url }}/assets/-2x-1.png)
+![f(x) = x^2 graph](/assets/-2x-1.png)
 
 Notice how the derivative points up in the direction that the function increases? If $$f(x)$$ increases as $$x$$ increases, then the derivative points up; if $$f(x)$$ decreases as $$x$$ increases, then the derivative points down. We can use the sign of the derivative to know if we should increase or decrease $$x$$ to decrease $$f(x)$$, which will be useful for gradient descent.
 
 Also, notice how the magnitude of the derivative, $$\mid f' (x) \mid$$, increases as $$x$$ goes away from the minimum (the vertex, in this case)? Look at these graphs:
 
-![f(x) = x^2 graph]({{ site.url }}/assets/2x-1.png)
-![f(x) = x^2 graph]({{ site.url }}/assets/4x-4.png)
+![f(x) = x^2 graph](/assets/2x-1.png)
+![f(x) = x^2 graph](/assets/4x-4.png)
 
 That means that, as we get closer to the minimum, the derivative gets smaller, which will also be useful for gradient descent.
 
