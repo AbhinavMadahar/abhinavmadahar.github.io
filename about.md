@@ -8,5 +8,7 @@ I'm a student interested in mathematics and artificial intelligence. Sometimes, 
 interesting proof when I'm doing maths, so I post it here for you to see. I also teach the
 very basics of artificial intelligence, so I try to post my lessons here if we go off the book.
 
+I was born in Mohali, India, which is why the blog is entitled "Mohalian."
+
 If you want to get in touch, [email me](mailto:abhinavmadahar@gmail.com) or
 [tweet me](https://twitter.com/abhinavmadahar).
