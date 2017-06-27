@@ -1,1 +1,12 @@
 @import 'vendor/skeleton.min';
+
+$light-grey: #919191;
+
+ul {
+    list-style-type: none;
+}
+
+// makes text lighter than normal
+.faint {
+    color: $light-grey;
+}
