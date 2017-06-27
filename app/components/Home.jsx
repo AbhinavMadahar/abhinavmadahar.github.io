@@ -5,7 +5,7 @@ export default () => (
     <div className="row">
       <div className="eight columns">
         <header>
-          <h1><u>Abhinav Madahar</u></h1>
+          <h1>Abhinav Madahar</h1>
           <p>
             <strong>Position:</strong> Rutgers University, undergraduate student<br />
             <strong>Contact:</strong> <a href="mailto:abhinav.madahar@rutgers.edu">abhinav.madahar@rutgers.edu</a><br />
