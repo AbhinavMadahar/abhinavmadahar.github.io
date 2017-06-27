@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+.sass-cache
+dist/bundle.js
+dist/main.css
