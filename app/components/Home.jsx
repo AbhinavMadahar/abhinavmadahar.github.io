@@ -1,5 +1,7 @@
 import React from 'react';
 
+const Separator = () => (<hr />);
+
 export default () => (
   <div className="container">
     <div className="row">
@@ -7,9 +9,9 @@ export default () => (
         <header>
           <h1>Abhinav Madahar</h1>
           <p>
-            <strong>Position:</strong> Rutgers University, undergraduate student<br />
+            <strong>Position:</strong> Rutgers University, undergraduate<br />
             <strong>Contact:</strong> <a href="mailto:abhinav.madahar@rutgers.edu">abhinav.madahar@rutgers.edu</a><br />
-            <strong>Updates:</strong> <a href="https://twitter.com/abhinavmadahar">my Twitter</a>
+            <strong>News:</strong> <a href="https://twitter.com/abhinavmadahar">Twitter</a>
           </p>
         </header>
       </div>
@@ -17,6 +19,8 @@ export default () => (
         <img alt="" src="media/img/abhinav.jpg" />
       </div>
     </div>
+
+    <Separator />
 
     <div className="row">
       <h2>Publications</h2>
