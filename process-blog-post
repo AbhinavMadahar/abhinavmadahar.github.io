@@ -20,6 +20,6 @@ if ($pathname =~ m/\/([^\/]*?)\.html/) {
 
 my $processed_file = `cat $pathname | cpp | grep -v '^#'`;
 
-open(my $dest, '>', "blog/$name.html") or die "Cannot open blog/$name";
+open(my $dest, '>', "docs/blog/$name.html") or die "Cannot open blog/$name";
 
 print $dest $processed_file;
