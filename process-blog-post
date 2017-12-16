@@ -1,0 +1,25 @@
+#!/usr/bin/env perl
+
+# reads in single a line of the format:
+# $BLOG_POST_PATHNAME
+# if it doesn't understand the input, it exits with error code 1
+
+use warnings;
+use strict;
+
+my $pathname = <STDIN>;
+chomp $pathname;
+
+my $name;
+if ($pathname =~ m/\/([^\/]*?)\.html/) {
+     $name = $1;
+     chomp $name;
+} else {
+    exit 1;
+}
+
+my $processed_file = `cat $pathname | cpp | grep -v '^#'`;
+
+open(my $dest, '>', "blog/$name.html") or die "Cannot open blog/$name";
+
+print $dest $processed_file;
