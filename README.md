@@ -19,5 +19,3 @@ And, to deploy any changes in the source code, run
 ```bash
 bash scripts/deploy.sh
 ```
-
->>>>>>> gh-pages
