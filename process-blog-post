@@ -7,19 +7,20 @@
 use warnings;
 use strict;
 
-my $pathname = <STDIN>;
-chomp $pathname;
+while(my $pathname = <STDIN>) {
+    chomp $pathname;
 
-my $name;
-if ($pathname =~ m/\/([^\/]*?)\.html/) {
-     $name = $1;
-     chomp $name;
-} else {
-    exit 1;
+    my $name;
+    if ($pathname =~ m/\/([^\/]*?)\.html/) {
+        $name = $1;
+        chomp $name;
+    } else {
+        exit 1;
+    }
+
+    my $processed_file = `cat $pathname | cpp | grep -v '^#'`;
+
+    open(my $dest, '>', "blog/$name.html") or die "Cannot open blog/$name";
+
+    print $dest $processed_file;
 }
-
-my $processed_file = `cat $pathname | cpp | grep -v '^#'`;
-
-open(my $dest, '>', "docs/blog/$name.html") or die "Cannot open blog/$name";
-
-print $dest $processed_file;

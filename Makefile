@@ -1,5 +1,5 @@
 SRC=src
-BLOG_SRC=src/blog
+BLOG_SRC=blog # subdirectory of SRC
 
 all: index.html blog blog/%.html 
 
@@ -10,4 +10,4 @@ blog:
 	mkdir blog
 
 blog/%.html:
-	ls $(BLOG_SRC) -1 | awk '{print "src/blog/"$$1}' | ./process-blog-post
+	ls $(SRC)/$(BLOG_SRC) -1 | awk '{print "src/blog/"$$0}' | ./process-blog-post
