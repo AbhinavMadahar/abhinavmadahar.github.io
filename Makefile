@@ -9,5 +9,5 @@ index.html: $(SRC)/homepage.html $(SRC)/header.html
 blog:
 	mkdir blog
 
-blog/%.html:
+blog/%.html: blog
 	ls $(SRC)/$(BLOG_SRC) -1 | awk '{print "src/blog/"$$0}' | ./process-blog-post

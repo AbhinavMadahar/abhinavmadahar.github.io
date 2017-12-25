@@ -11,14 +11,14 @@ while(my $pathname = <STDIN>) {
     chomp $pathname;
 
     my $name;
-    if ($pathname =~ m/\/([^\/]*?)\.html/) {
+    if ($pathname =~ m/\/([^\/]*?).html/) {
         $name = $1;
         chomp $name;
     } else {
         exit 1;
     }
 
-    my $processed_file = `cat $pathname | cpp | grep -v '^#'`;
+    my $processed_file = `cat $pathname | cpp -xc - | grep -v '^#'`;
 
     open(my $dest, '>', "blog/$name.html") or die "Cannot open blog/$name";
 

@@ -10,6 +10,12 @@
   <p>Of course, this is a discrete mathematics competition, so the goal is a rigourous proof, not just the particular number.</p>
 
   <p>First, I like to estabish types and notation. I will interpret that $n$ is a natural number. <br />
-  Also, $\mathbb{P}$ is the set of all primes, $\mathbb{P}_{i}$ is the $i^{th}$ prime with 1-indexing, and $\mathbb{P}_{>k}$ is all the primes greater than $k$. $\mathbb{P}_{\ge{} k}$ is
-  defined similarly.</p>
+  Also, $\mathbb{P}$ is the set of all primes, $\mathbb{P}_{i}$ is the $i^{th}$ prime such that $\mathbb{P}_{1} = 2$, and $\mathbb{P}_{>k}$ is all the primes greater than $k$. $\mathbb{P}_{\ge{} k}$ is defined similarly.</p>
+
+  <p>Now, observe that such an $n$ must exist.
+  If a natural $k$ is odd, then $2$ is not a prime factor of $k$, so $2$ must also not be a prime factor of $k^2$, which has the same unique prime factors as $k$.
+  All of the primes $p > 3$ are odd because the only even prime is $2$, and $2 \le 3$. If $p^2$ is odd, then $p^2-1$ is even, so it is divided by $2$.
+  Thus, if $n=2$ then $n$ divides $p^2 - 1$ for all primes $p > 3$, though it not necessarily the largest such $n$.</p>
+
+  <p>Our goal is now to find the largest such $n$.</p>
 </div>
