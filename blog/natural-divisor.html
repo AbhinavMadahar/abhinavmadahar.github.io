@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<div class="container">
+  <h1>Greatest Natural Which Divides All Primes > 3</h1>
+  <p>I intend to participate in Rutgers' <a href="http://sites.math.rutgers.edu/~prize/">competition for undergrads</a>, so
+ I worked on the first problem of their 2017 problem set with my friend Albert Lee.</p>
+
+  <blockquote>Find the greatest number $n$ that divides $p^2 - 1$ for all primes $p > 3$.</blockquote>
+
+ <p>Of course, this is a discrete mathematics competition, so the goal is a
+ rigourous proof, not just the particular number.</p>
+
+ <p>First, I like to estabish types and notation. <br />
+ I will interpret that $n$ is a natural number. <br />
+ Also, $\mathbb{P}$ is the set of all primes, $\mathbb{P}_{i}$ is the $i^{th}$ prime such that $\mathbb{P}_{1} = 2$, and
+ $\mathbb{P}_{>k}$ is all the primes greater than $k$. $\mathbb{P}_{\ge{} k}$ is defined similarly. $\mathbb{P}_{i>k}$ is the
+ set of primes whose index $i$ is greater than $k$ and $\mathbb{P}_{i\ge{} k}$ is defined similarly.</p>
+
+  <p>Now, observe that such an $n$ must exist. It is trivially true that $n=1$ divides all $p^2-1$, but we can go a step further and prove that $n=2$ can also be possible.
+  If a natural $k$ is odd, then $2$ is not a prime factor of $k$, so $2$ must also not be a prime factor of $k^2$, which has the same unique prime factors as $k$.
+  All of the primes $p > 3$ are odd because the only even prime is $2$, and $2 \le 3$. If $p^2$ is odd, then $p^2-1$ is even, so it is divided by $2$.
+  Thus, if $n=2$ then $n$ divides $p^2 - 1$ for all primes $p > 3$, though it not necessarily the largest such $n$.</p>
+
+  <p>We now establish that $n$ has a maximum possible value. For $n$ to divide all $p^2-1$, it must divide the smallest such $p^2-1$, which occurs when $p = 5$.
+ Thus, $n$ must divide $(5^2 - 1) = 24$, which has divisors $1, 2, 3, 4, 6, 8, 12, 24$. Thus, $1 \le{} n \le{} 24$, so $n$ must have a maximum value.</p>
+
+ <p>At this point, we can show that $3$ and $8$ are both divisors of $p^2-1$, so $24$ must be the greatest $n$ that divides $p^2-1$.</p>
+
+ <p>First, we see that, if $n$ divides $p^2-1$ for $p \in \mathbb{P}_{>3}$, then $p^2-1 \equiv 0 \left( \mathrm{mod}\space{} n \right)$, so
+ $p^2 \equiv 1 \left( \mathrm{mod}\space{} n \right)$. We now let $n=3$ and $a \in \mathbb{N}$ such that $p^2 = 3a + 1$</p>
+</div>
