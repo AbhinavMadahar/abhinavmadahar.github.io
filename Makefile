@@ -1,16 +1,19 @@
 SRC=src
-BLOG_SRC=blog # subdirectory of SRC
+BLOG_SRC=blog# subdirectory of SRC
+BLOG_DEST=blog# subdirectory of repo
 
-all: index.html blog blog/%.html styles.css
+all: index.html $(BLOG_DEST) blog/%.html styles.css
 
 index.html: $(SRC)/homepage.html $(SRC)/header.html
-	cat $(SRC)/homepage.html | cpp -xc - | grep -v '^#' > index.html
+	@cat $(SRC)/homepage.html | m4 > index.html
 
-blog:
-	mkdir blog
+$(BLOG_DEST):
+	@mkdir $(BLOG_DEST)
 
-blog/%.html: blog
-	ls $(SRC)/$(BLOG_SRC) -1 | awk '{print "src/blog/"$$0}' | ./process-blog-post
+$(BLOG_DEST)/%.html: $(SRC)/$(BLOG_SRC)/*.html
+	@echo $(SRC)/$(BLOG_SRC)/*.html | \
+		sed 's/\ /\n/g' | \
+		./process-blog-post
 
 styles.css: $(SRC)/styles.css
-	cp $(SRC)/styles.css styles.css
+	@cp $(SRC)/styles.css styles.css
