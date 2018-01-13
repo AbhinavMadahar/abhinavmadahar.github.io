@@ -1,0 +1,91 @@
+include(`src/header.html')
+
+<div class="container">
+<h1>Proof by Induction</h1>
+<p><span class="subtitle">By Abhinav Madahar</span><br />
+<span class="subtitle">2018 January 13</span><p>
+<hr />
+
+<p>Unlike the natural sciences, mathematics is built on proofs, not
+experiments. To find truth, a mathematician would decide that some
+statements must be true. For example, Euclid's first axiom in his
+<i>Elements</i> is
+
+<blockquote>
+	Things which are equal to the same thing are also equal to one another.
+</blockquote>
+
+i.e. $a = c$ and $b = c$ imply $a = b$. </p>
+
+<p>If this sounds obvious, that's the point. Axioms are inherently boring, but
+they can be used to build theorems, which are very interesting, using
+mathematical proofs. Also, conjectures are statements which have not been
+proven.</p>
+
+<p>There are many techniques for making a mathematical proof, one of which is a
+proof by induction. I'm reading the phenomenal
+<a href="http://abstract.ups.edu/download/aata-20130816.pdf">
+	<i>Abstract Algebra</i>
+</a> by Judson, which starts by explaining a proof by induction. As always, I
+focus on intuition on my blog, not rigour, so you should read Judson for
+rigour.</p>
+
+<p>Assume that you want to prove that some statement $S(n)$ is true for all
+natural numbers $n$. Then you could prove that $S(1)$ is true and that, if
+$S(k)$ is true for some $k$, then $S(k+1)$ must be true, which is called the
+inductive step. The first step implies $S(1)$, and the second implies $S(1+1)$
+(i.e. $S(2)$), and then we repeat to see that $S(3)$ is true, and so forth.
+Clearly, we just proved that $S(n)$ is true for all the natural numbers $n$, so
+we proved what was to be proved.</p>
+
+<p>For example, here is a proof I did while reading.</p>
+
+<hr />
+<p><strong>Conjecture</strong><br />
+Prove that
+$$1^3 + 2^3 + \ldots + n^3 = \frac{n^2(n+1)^2}{4}$$
+for all $n \in \mathbb{N}$</p>
+
+<p><strong>Proof</strong></p>
+We see that the conjecture is true when $n = 1$, so now we need to prove that,
+if
+$$1^3 + 2^3 + \ldots + n^3 = \frac{n^2(n+1)^2}{4}$$
+is true, then so is
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{(n+1)^2(n+2)^2}{4}$$</p>
+
+<p>We can just do some simple algebra to prove the inductive step.<br />
+
+Assume
+$$1^3 + 2^3 + \ldots + n^3 = \frac{n^2(n+1)^2}{4}$$
+
+Then it must follow that
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{(n+1)^2(n+2)^2}{4} + (n+1)^3$$ <br />
+
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{(n+1)^2(n+2)^2 + 4(n+1)^3}{4}$$ <br />
+
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{(n+1)^2(n+2)^2 + 4(n+1)(n+1)^2}{4}$$ <br />
+
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{((n+2)^2 + 4(n+1))(n+1)^2}{4}$$ <br />
+
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{((n+2)^2 + 4n + 4))(n+1)^2}{4}$$ <br />
+
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{(n+2)^2(n+1)^2}{4}$$ <br />
+
+$$1^3 + 2^3 + \ldots + n^3 + (n+1)^3 = \frac{(n+1)^2(n+2)^2}{4}$$ <br />
+
+Which is the inductive step.</p>
+
+<p>
+Now that we've finished both steps of the proof by induction, we've proven the
+conjecture for all natural $n$, so it's a theorem now.
+</p>
+
+<hr />
+
+<p>This is obviously a very simple example, but it may be harder that it looks. If you
+want to try your hand at another, prove that, for all natural $n \geq 4$,
+$$n! > 2^n$$
+
+</p>
+
+</div>
