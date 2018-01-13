@@ -13,6 +13,10 @@ h3 {
     letter-spacing: -.08rem;
 }
 
+a {
+	text-decoration: none;
+}
+
 .subtitle {
 	font-size: 12pt;
 	color: #4A4A4A;
