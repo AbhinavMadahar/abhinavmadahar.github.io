@@ -4,7 +4,7 @@ BLOG_DEST=blog# subdirectory of repo
 
 all: index.html $(BLOG_DEST) blog/%.html styles.css
 
-index.html: $(SRC)/home.html $(SRC)/header.html $(SRC)/footer.html
+index.html: $(SRC)/home.html $(SRC)/include/header.html $(SRC)/include/footer.html
 	@cat $(SRC)/home.html | m4 > index.html
 
 $(BLOG_DEST):
