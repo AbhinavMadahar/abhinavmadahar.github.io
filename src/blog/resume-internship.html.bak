@@ -1,0 +1,34 @@
+include(`src/include/header.html')
+
+btitle(Writing a Resume to Get an Internship, 2018 April 11)
+
+<p>This summer, I'm going to intern at Johnson &amp; Johnson as a medical
+devices data scientist. I'm also a freshman who has never been able to get a
+job before in his life, so I know the difference between a good resume and a
+bad one. Let's examine the major mistakes university students make when writing
+their resumes, from my experience.</p>
+
+<br />
+
+<h2>Mistake 1: "this is a general resume"</h2>
+
+<p>As I detailed in my <a href="/blog/writing.html">last post about writing,</a>
+you have to think from the perspective of your reader when you write. For a
+resume, you have to think from the perspective of an employer. You have to
+convince employers that they need <em>you</em> on their team and nobody else
+could possibly compare. You resume is an argument for your employment.</p>
+
+<p>If I wanted to employ a computer programmer, I would care about their:</p>
+<ul>
+	<li>prior work experience in computer programming/computer science/etc.</li>
+	<li>personal projects</li>
+	<li>education in computer science</li>
+</ul>
+<p>and so forth, so put that stuff on your resume if you want to be a programmer.
+I would not care about their favourite TV show, their high school GPA, etc., so
+please don't put that stuff on your resume. If you had a 3.8 GPA in high school
+and love to play the guitar, then why would that make you a good programmer? In
+particular, don't include your high school education if you have or are working
+towards your bachlore's; we know you went to high school.</p>
+
+include(`src/include/footer.html')
