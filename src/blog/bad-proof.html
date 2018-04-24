@@ -1,0 +1,32 @@
+include(`src/include/header.html')
+
+btitle(Why this proof is bad, 2018 April 24)
+
+<p>In my <i>Intro to Mathematical Reasoning</i> course, I had to prove that the
+set of all finite subsets of $\mathbb{N}$ is countable. Although I was able to
+easily do so, I now don't like my proof. Of course, I've already submitted my
+homework, so I can't change it, but I can at least address my problems with it
+here.</p>
+
+<p>Here is my proof. Note that Corollary 1 states that the primes are
+countable.</p>
+
+<blockquote>
+	<p><b>Proposition 9.</b> <i>The set of all finite subsets of $\mathbb{N}$ is
+		countable.</i></p>
+
+	<p><i>Proof.</i> Let S be the infinite set of all finite subsets of
+	$\mathbb{N}$. We construct a bijection $h : S \rightarrow (S_0 \subseteq
+	\mathbb{N})$.</p>
+
+	<p>Let $T \in S$. From Corollary 1, we know that there exists a bijection $f:
+	\mathbb{N} \rightarrow \mathbb{P}$. We note that the image $f (T)$ is is a
+	set of primes. The Fundamental Theorem of Arithmetic tells us that there
+	exists a bijection $g$ which maps finite sets of primes to naturals whose
+	prime factorizations do not repeat primes. We see that $f(T)$ is in the
+	domain of $g$. </p>
+
+	<p>Thus, the function $h = f \circ g$ is a bijection, so $S$ is countable. $\qed$</p>
+<blockquote>
+
+include(`src/include/footer.html')
