@@ -26,7 +26,55 @@ countable.</p>
 	prime factorizations do not repeat primes. We see that $f(T)$ is in the
 	domain of $g$. </p>
 
-	<p>Thus, the function $h = f \circ g$ is a bijection, so $S$ is countable. $\qed$</p>
+	<p>Thus, the function $h = g \circ f$ is a bijection, so $S$ is countable.
+	$\square$</p>
+</blockquote>
+
+<p>If you have difficulty understanding the proof, then there's nothing wrong
+with you. Although this proof is valid and rigourous, it's just so abstract
+that it's unnecessarily hard to understand.</p>
+
+<p>Specifically, I don't give an explicit definition of $f$ nor $g$. I just say
+that such bijections exist, which is all that I needed to do. However, in doing
+so, I make the proof far too abstract. We will define $f$ and $g$ here.</p>
+
 <blockquote>
+	<p><b>Definition.</b> Let $P \in \mathscr{P}(\mathbb{P})$ be finite. Then we
+	let $g$ be a function whose domain is the finite subset of
+	$\mathscr{P}(\mathbb{P})$ and codomain is the set of all naturals which don't
+	repeat prime factorizations. We define $g$ with
+		$$g(P) = \prod_{p \in P} p$$
+	and $g^{-1}$ gives the prime factors of a natural. </p>
+</blockquote>
+
+<p>By restricting the codomain of $g$ to naturals which don't repeat prime
+factors, we see that $g$ is a bijection.</p>
+
+<p>Now we define $f$.</p>
+
+<blockquote>
+	<p><b>Definition.</b> The function $f: \mathbb{N} \rightarrow \mathbb{P}$ maps
+	$n$ to the $n^{\mathrm{th}}$ prime. That is,
+		$$f(1) = 2,$$
+		$$f(2) = 3,$$
+		$$f(3) = 5,$$
+	etc.</p>
+
+	For convenience, if $N \subseteq \mathbb{N}$, we let $f(N)$ be the image of
+	$N$ under $f$. This is essentially an abuse of notation.
+</blockquote>
+
+<p>This makes it possible to give a more "tangible" description of the proof.
+Let $T \in S$. Then $f(T)$ is the image of $T$ under $f$, so it maps each
+element $t \in T$ to the $t^{\mathrm{th}}$ prime. We see that $f(T)$ is a set
+of primes, so $g(f(T))$ is the unique product of those primes. We see that $g \circ f$ is bijective because:
+<ol>
+	<li>the elements in $T$ are unique because it is a set,</li>
+	<li>and the elements in $f(T)$ are unique because $f$ is injective,</li>
+	<li>and the elements in $g(f(T))$ are unique because $g$ is injective.</li>
+</ol>
+
+Thus, $g \circ f$ is a bijection, so we let $h = g \circ f$. From this, we know
+that the
 
 include(`src/include/footer.html')
