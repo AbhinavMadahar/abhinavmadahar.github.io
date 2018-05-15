@@ -11,7 +11,7 @@ $(BLOG_DEST):
 	@mkdir $(BLOG_DEST)
 
 $(BLOG_DEST)/%.html: $(SRC)/$(BLOG_SRC)/*.html
-	@echo $(SRC)/$(BLOG_SRC)/*.html | \
+	@echo $(SRC)/$(BLOG_SRC)/*.html $(SRC)/$(BLOG_SRC)/*.md | \
 		sed 's/\ /\n/g' | \
 		./process-blog-post
 
