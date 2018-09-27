@@ -5,7 +5,7 @@ btitle(Honeyed Apple (Zelda-themed), 2018 September 27)
 - 1 red delicious apple
 - Coconut oil (canola oil might work, too)
 - Lime
-- Nutmed
+- Nutmeg
 - Cinnamon
 - Ginger
 
