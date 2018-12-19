@@ -1,4 +1,7 @@
-btitle(Honeyed Apple (Zelda-themed), 2018 September 27)
+---
+title: Honeyed Apple (Zelda-themed)
+date: 2018 September 27
+---
 
 ## Ingredients:
 

@@ -1,4 +1,7 @@
-btitle(Writing a Resume to Get an Internship, 2018 April 11)
+---
+title: Writing a Resume to Get an Internship
+date: 2018 April 11
+---
 
 <p>This summer, I'm going to intern at Johnson &amp; Johnson as a medical
 devices data scientist. I'm also a freshman who has never been able to get a

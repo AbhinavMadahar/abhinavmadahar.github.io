@@ -1,4 +1,6 @@
-btitle(Hello, world!)
+---
+title: Hello, world!
+---
 
 <p>Hello, this is my discrete mathematics blog. I will
 add some posts giving proofs of interesting theorems

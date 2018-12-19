@@ -1,4 +1,7 @@
-btitle(Proof by Induction, 2018 January 13)
+---
+title: Proof by Induction
+date: 2018 January 13
+---
 
 <p>Unlike the natural sciences, mathematics is built on proofs, not
 experiments. To find truth, a mathematician would decide that some

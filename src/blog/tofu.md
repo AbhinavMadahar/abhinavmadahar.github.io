@@ -1,4 +1,7 @@
-btitle(Apple and Coconut Tofu, 2018 May 15)
+---
+title: Apple and Coconut Tofu
+date: 2018 May 15
+---
 
 ## Ingredients:
 

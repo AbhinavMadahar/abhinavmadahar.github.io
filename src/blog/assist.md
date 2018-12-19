@@ -1,4 +1,7 @@
-btitle(How to Win a Hackathon with Machine Learning, 2018 February 25)
+---
+title: How to Win a Hackathon with Machine Learning
+date: 2018 February 25
+---
 
 <p>Last weekend, I won the Google Data Science award, the John Snow Labs award,
 and the HopHacks 3<sup>rd</sup> overall best award for ASSIST, an AI which

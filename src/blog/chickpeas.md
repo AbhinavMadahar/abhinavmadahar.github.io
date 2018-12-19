@@ -1,4 +1,7 @@
-btitle(Red & Green Chickpeas, 2018 May 16)
+---
+title: Red & Green Chickpeas
+date: 2018 May 16
+---
 
 ## Ingredients:
 

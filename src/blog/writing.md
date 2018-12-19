@@ -1,4 +1,7 @@
-btitle(How to Write a Tinder Bio and an Expos Paper, 2018 January 28)
+---
+title: How to Write a Tinder Bio and an Expos Paper
+date: 2018 January 28
+---
 
 <p>People write to communicate an idea, so, when you're writing, always remember:
 <ol>

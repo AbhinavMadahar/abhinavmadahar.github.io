@@ -1,4 +1,7 @@
-btitle(Graphs and Subgraphs, 2018 January 12)
+---
+title: Graphs and Subgraphs
+date: 2018 January 12
+---
 
 <p>In modern mathematics, there are two major subfields, algebra and
 analysis, which <a href="https://math.berkeley.edu/~moorxu/">Moor Xu</a>

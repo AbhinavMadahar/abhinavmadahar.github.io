@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-while read blogpost
-do
-	pandoc -f markdown_strict -t html <$blogpost |
-		cat src/include/header.html - src/include/footer.html |
-		m4 \
-		>blog/$(basename -s '.html' $(basename -s '.md' $blogpost)).html
-done

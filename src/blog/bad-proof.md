@@ -1,4 +1,7 @@
-btitle(Why this proof is bad, 2018 April 24)
+---
+title: Why this proof is bad
+date: 2018 April 24
+---
 
 <p>In my <i>Intro to Mathematical Reasoning</i> course, I had to prove that the
 set of all finite subsets of $\mathbb{N}$ is countable. Although I was able to

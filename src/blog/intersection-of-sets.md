@@ -1,4 +1,8 @@
-btitle(The Intersection of Sets is a Set, 2018 January 13)
+---
+title: The Intersection of Sets is a Set
+date: 2018 January 13
+---
+
 <p>Modern mathematics is almost universally<a href="#lambda-category">*</a>
 based on set theory, so I decided to read Pinter's <i>Set Theory</i>.</p>
 

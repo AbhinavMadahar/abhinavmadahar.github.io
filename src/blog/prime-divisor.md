@@ -1,4 +1,7 @@
-btitle(The Greatest Divisor of $p^2-1$ for Primes $p > 3$, 2018 January 23)
+---
+title: The Greatest Divisor of $p^2-1$ for Primes $p > 3$
+date: 2018 January 23
+---
 
 <p>This was a problem from the Rutgers Undergraduate Mathematics competition in
 2017:
