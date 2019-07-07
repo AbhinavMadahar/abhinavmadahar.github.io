@@ -7,4 +7,5 @@ styles.css: src/styles.css
 	cp src/styles.css styles.css
 
 blog/%.html: src/blog/%.md
-	cat src/include/header.html $< | pandoc -o blog/$(notdir $(basename $<)).html -s --template blog-template.html
+	cat src/include/header.html $< src/include/footer.html | \
+		pandoc -o blog/$(notdir $(basename $<)).html -s --template blog-template.html
