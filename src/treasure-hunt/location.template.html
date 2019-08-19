@@ -62,10 +62,13 @@ $for(include-after)$
 $include-after$
 $endfor$
 $if(next)$
-<button id="check">Check to see if you're at the next location.</button>
+<p><button id="check">Check to see if you're at the next location.</button></p>
 $endif$
 <br />
+
+<p>The next clue is in the region shaded red.</p>
 <img src="/treasure-hunt/regions/$region$.png" class="region">
+
 <script>
 	const goal_latitude = Number("$goal$".split(', ')[0]);
 	const goal_longitude = Number("$goal$".split(', ')[1]);
