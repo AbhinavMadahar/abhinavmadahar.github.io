@@ -61,6 +61,39 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
-<img class="region" src="/treasure-hunt/regions/$region$.png" />
+$if(next)$
+<button id="check">Check to see if you're at the next location.</button>
+$endif$
+<br />
+<img src="/treasure-hunt/regions/$region$.png" class="region">
+<script>
+	const goal_latitude = Number("$goal$".split(', ')[0]);
+	const goal_longitude = Number("$goal$".split(', ')[1]);
+
+	const radian = (degrees) => degrees * (Math.PI / 180);
+
+	document.getElementById("check").addEventListener('click', () => {
+		navigator.geolocation.getCurrentPosition(position => {
+			const player_latitude = position.coords.latitude;
+			const player_longitude = position.coords.longitude;
+			const player_accuracy = position.coords.accuracy;
+
+			// now, we can approximate the World as being flat for such a small distance.
+			// that way, we can find the distance using a simple Euclidean calculation
+
+			const radius = 6371000;  // radius of the World in metres because the navigator API uses metres
+			const distance = 2 * radius * Math.asin(Math.sqrt(Math.pow(Math.sin(radian(player_latitude - goal_latitude) / 2), 2) + Math.cos(player_latitude) * Math.cos(goal_latitude) * Math.pow(Math.sin(radian(player_longitude - goal_longitude) / 2), 2)));
+			const acceptable_distance = 50 + player_accuracy;  // we let them be farther than 50m if they have a poor GPS connexion
+
+			if (distance < 50 + player_accuracy + 1000000) {
+				alert('You found the clue! Click OK to continue to the next clue.');
+				window.location = "/treasure-hunt/locations/$next$.html";
+			} else {
+				alert("No, you're not there yet. Remember that you have to be within 50 metres of the target.");
+			}
+
+		}, () => undefined, { enableHighAccuracy: true });
+	});
+</script>
 </body>
 </html>

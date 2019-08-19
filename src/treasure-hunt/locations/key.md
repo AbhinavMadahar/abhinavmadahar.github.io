@@ -1,6 +1,8 @@
 ---
 title: Key Box
 region: bcc
+goal: 40.527371, -74.457060
+next: buckingham
 ---
 
 > Your residence may be great,

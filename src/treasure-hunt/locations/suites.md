@@ -1,6 +1,8 @@
 ---
 title: Busch Suites
 region: bcc
+goal: 40.526092, -74.460263
+next: key
 ---
 
 Keep going!

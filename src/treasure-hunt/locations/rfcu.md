@@ -1,6 +1,8 @@
 ---
 title: Rutgers Federal Credit Union
 region: bcc
+goal: 40.525475, -74.459453
+next: suites
 ---
 
 Nice job.
