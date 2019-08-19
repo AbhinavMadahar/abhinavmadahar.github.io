@@ -1,4 +1,4 @@
-TREASURE_HUNT_ITEMS=treasure-hunt treasure-hunt/treasure-hunt.css $(addprefix treasure-hunt/locations/, $(addsuffix .html, $(notdir $(basename $(wildcard src/treasure-hunt/locations/*.md)))))
+TREASURE_HUNT_ITEMS=treasure-hunt treasure-hunt/treasure-hunt.css $(addprefix treasure-hunt/regions/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/regions/*.png))))) $(addprefix treasure-hunt/locations/, $(addsuffix .html, $(notdir $(basename $(wildcard src/treasure-hunt/locations/*.md)))))
 BLOG_ITEMS=blog $(addprefix blog/, $(addsuffix .html, $(notdir $(basename $(wildcard src/blog/*.md)))))
 
 all: index.html styles.css ${TREASURE_HUNT_ITEMS} $(BLOG_ITEMS)
@@ -19,10 +19,13 @@ blog/%.html: src/blog/%.md src/blog-template.html
 treasure-hunt:
 	mkdir -p treasure-hunt
 	mkdir -p treasure-hunt/locations
+	mkdir -p treasure-hunt/regions
 
-treasure-hunt/treasure-hunt.css: src/treasure-hunt/treasure-hunt.css
+treasure-hunt/treasure-hunt.css: src/treasure-hunt/treasure-hunt.css treasure-hunt
 	cp src/treasure-hunt/treasure-hunt.css treasure-hunt/treasure-hunt.css
 
-treasure-hunt/locations/%.html: src/treasure-hunt/locations/%.md src/treasure-hunt/location.template.html
-	cat $< | \
-		pandoc -o treasure-hunt/$(notdir $(basename $<)).html -s --template src/treasure-hunt/location.template.html
+treasure-hunt/regions/%.png: src/treasure-hunt/regions/%.png treasure-hunt
+	mv $< treasure-hunt/regions/$(notdir $<)
+
+treasure-hunt/locations/%.html: src/treasure-hunt/locations/%.md src/treasure-hunt/location.template.html treasure-hunt
+	pandoc $< -o treasure-hunt/locations/$(notdir $(basename $<)).html -s --template src/treasure-hunt/location.template.html

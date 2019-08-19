@@ -1,0 +1,15 @@
+body {
+	font-family: sans-serif;
+
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+
+.title {
+	text-align: center;
+}
+
+.region {
+	width: 100%;
+	text-align: center;
+}
