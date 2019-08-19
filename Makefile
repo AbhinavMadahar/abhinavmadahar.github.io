@@ -25,7 +25,7 @@ treasure-hunt/treasure-hunt.css: src/treasure-hunt/treasure-hunt.css treasure-hu
 	cp src/treasure-hunt/treasure-hunt.css treasure-hunt/treasure-hunt.css
 
 treasure-hunt/regions/%.png: src/treasure-hunt/regions/%.png treasure-hunt
-	mv $< treasure-hunt/regions/$(notdir $<)
+	cp $< treasure-hunt/regions/$(notdir $<)
 
 treasure-hunt/locations/%.html: src/treasure-hunt/locations/%.md src/treasure-hunt/location.template.html treasure-hunt
 	pandoc $< -o treasure-hunt/locations/$(notdir $(basename $<)).html -s --template src/treasure-hunt/location.template.html
