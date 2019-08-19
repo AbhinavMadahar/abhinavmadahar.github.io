@@ -66,8 +66,10 @@ $if(next)$
 $endif$
 <br />
 
-<p>The next clue is in the region shaded red.</p>
+$if(region)$
+<p>The next clue is in the shaded region.</p>
 <img src="/treasure-hunt/regions/$region$.png" class="region">
+$endif$
 
 <script>
 	const goal_latitude = Number("$goal$".split(', ')[0]);
@@ -86,9 +88,9 @@ $endif$
 
 			const radius = 6371000;  // radius of the World in metres because the navigator API uses metres
 			const distance = 2 * radius * Math.asin(Math.sqrt(Math.pow(Math.sin(radian(player_latitude - goal_latitude) / 2), 2) + Math.cos(player_latitude) * Math.cos(goal_latitude) * Math.pow(Math.sin(radian(player_longitude - goal_longitude) / 2), 2)));
-			const acceptable_distance = 50 + player_accuracy;  // we let them be farther than 50m if they have a poor GPS connexion
+			const acceptable_distance = $radius$ + player_accuracy;  // we let them be farther than 50m if they have a poor GPS connexion
 
-			if (distance < 50 + player_accuracy) {
+			if (distance < acceptable_distance) {
 				alert('You found the clue! Click OK to continue to the next clue.');
 				window.location = "/treasure-hunt/locations/$next$.html";
 			} else {
