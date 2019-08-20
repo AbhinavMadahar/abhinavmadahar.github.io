@@ -14,8 +14,8 @@ You finished the Busch Campus Center Sultanate! Take this badge.
 
 ## Next Region
 
-Now, you have to go to the next region.
-Here's your first clue, which will take you to the first stage of the new region.
+Now, you have to go to the next region, the West Central Busch Sultanate.
+Here's your first clue, which will take you to the first location in the new region.
 
 ![](https://i.ytimg.com/vi/qNoVTWSgZTk/maxresdefault.jpg)
 ![](https://i.kym-cdn.com/entries/icons/original/000/028/987/lightningspeed.jpg)
