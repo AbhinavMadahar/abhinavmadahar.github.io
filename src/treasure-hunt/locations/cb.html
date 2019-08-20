@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/treasure-hunt/treasure-hunt.css" />
+
+<h1 class="title">Central Busch</h1>
+<hr />
+
+<p>
+Welcome to the Central Busch Sultanate!
+There are 10 secret locations that you can find, and you need to find 5 to pass to the next region.
+Don't close this web page, but feel free to lock your phone, when you travel.
+Remember to not leave the region because you'll waste your time.
+</p>
+
+<ul id="found">
+</ul>
+
+<p><a id="next" style="display:none" href="/treasure-hunt/locations/arc.html"><button>Go to Next Region</button></a></p>
+
+<img src="/treasure-hunt/regions/cb.png" />
+
+<script>
+	let locationHistory = [];
+	navigator.geolocation.watchPosition((position) => {
+		locationHistory.push(position);
+
+		const player_latitude = position.coords.latitude;
+		const player_longitude = position.coords.longitude;
+		const player_accuracy = position.coords.accuracy;
+
+		const goals = [
+			[40.521902, -74.462481, 'Hill Courtyard'],
+			[40.522186, -74.460307, 'CoE D Wing'],
+			[40.522107, -74.461424, 'CoE C Wing'],
+			[40.522508, -74.460935, 'CoE B Wing'],
+			[40.523066, -74.460717, 'CoE A Wing'],
+			[40.523493, -74.460881, 'MSE Courtyard'],
+			[40.522687, -74.460388, 'CoE South Courtyard'],
+			[40.521480, -74.461324, 'CoRE Building'],
+			[40.522695, -74.462268, 'Statue in front of SERC'],
+			[40.521806, -74.460883, 'EE Building'],
+		];
+
+		const found = [false, false, false, false, false, false, false, false, false, false]
+
+		let i = 0;
+		for (let goal of goals) {
+			const goal_latitude = goal[0];
+			const goal_longitude = goal[1];
+
+			const radian = (degrees) => degrees * (Math.PI / 180);
+
+			const radius = 6371000;  // radius of the World in metres because the navigator API uses metres
+			const distance = 2 * radius * Math.asin(Math.sqrt(Math.pow(Math.sin(radian(player_latitude - goal_latitude) / 2), 2) + Math.cos(player_latitude) * Math.cos(goal_latitude) * Math.pow(Math.sin(radian(player_longitude - goal_longitude) / 2), 2)));
+			const acceptable_distance = 25 + player_accuracy + 10000000;
+
+			if (distance < acceptable_distance) {
+				found[i] = true;
+			}
+
+			i += 1;
+		}
+
+		document.getElementById("found").innerHTML = "";
+		let nFound = 0;
+		for (let i = 0; i < 10; i++) {
+			if (found[i]) {
+				nFound++;
+				document.getElementById("found").innerHTML += "<li>" + goals[i][2] + " found!</li>";
+			}
+		}
+
+		if (nFound >= 5) {
+			document.getElementById("next").style = "";
+		}
+	}, undefined, { enableHighAccuracy: true });
+</script>

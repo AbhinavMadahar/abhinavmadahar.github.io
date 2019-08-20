@@ -1,6 +1,7 @@
 body {
 	font-family: sans-serif;
 
+	margin-top: 10vw;
 	margin-left: 10vw;
 	margin-right: 10vw;
 }
@@ -9,11 +10,14 @@ body {
 	text-align: center;
 }
 
-img {
+img, iframe {
 	width: 100%;
-	text-align: center;
 }
 
 p {
 	text-align: justify;
+}
+
+#regions-map {
+	height: 90vh;
 }
