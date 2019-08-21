@@ -1,7 +1,6 @@
 body {
 	font-family: sans-serif;
 
-	margin-top: 10vw;
 	margin-left: 10vw;
 	margin-right: 10vw;
 }
@@ -21,3 +20,4 @@ p {
 #regions-map {
 	height: 90vh;
 }
+
