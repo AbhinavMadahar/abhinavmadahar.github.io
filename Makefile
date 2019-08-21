@@ -1,4 +1,4 @@
-TREASURE_HUNT_ITEMS=treasure-hunt treasure-hunt/index.html treasure-hunt/treasure-hunt.css $(addprefix treasure-hunt/badges/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/badges/*.png))))) $(addprefix treasure-hunt/regions/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/regions/*.png))))) $(addprefix treasure-hunt/locations/, $(addsuffix .html, $(notdir $(basename $(wildcard src/treasure-hunt/locations/*.md)))))
+TREASURE_HUNT_ITEMS=treasure-hunt treasure-hunt/index.html treasure-hunt/treasure-hunt.css treasure-hunt/locations/cb.html $(addprefix treasure-hunt/badges/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/badges/*.png))))) $(addprefix treasure-hunt/regions/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/regions/*.png))))) $(addprefix treasure-hunt/locations/, $(addsuffix .html, $(notdir $(basename $(wildcard src/treasure-hunt/locations/*.md)))))
 BLOG_ITEMS=blog $(addprefix blog/, $(addsuffix .html, $(notdir $(basename $(wildcard src/blog/*.md)))))
 
 all: index.html styles.css ${TREASURE_HUNT_ITEMS} $(BLOG_ITEMS)
@@ -39,6 +39,9 @@ treasure-hunt/regions/%.png: src/treasure-hunt/regions/%.png treasure-hunt/regio
 
 treasure-hunt/badges/%.png: src/treasure-hunt/badges/%.png treasure-hunt/badges
 	cp $< treasure-hunt/badges/$(notdir $<)
+
+treasure-hunt/locations/cb.html: src/treasure-hunt/locations/cb.html treasure-hunt/locations
+	cp src/treasure-hunt/locations/cb.html treasure-hunt/locations
 
 treasure-hunt/locations/%.html: src/treasure-hunt/locations/%.md src/treasure-hunt/location.template.html treasure-hunt/locations
 	pandoc $< -o treasure-hunt/locations/$(notdir $(basename $<)).html -s --template src/treasure-hunt/location.template.html
