@@ -27,8 +27,8 @@ Now that you've made the Pharmacy Building safer for underperforming students li
 	let whiteness = 0;
 	const decayBackToWhite = setInterval(() => {
 	  document.body.style.backgroundColor = "rgb(255, " + whiteness + ", " + whiteness + ")";
-	  whiteness += 1;
-	}, 1);
+	  whiteness += 10;
+	}, 10);
 	setTimeout(() => clearInterval(decayBackToWhite), 1255);
 
 	localStorage.hp -= 10;
