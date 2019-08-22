@@ -3,6 +3,7 @@ title: Biological Sciences Dungeon
 region: bio
 goal: 40.523813, -74.465090
 next: arc
+radius: 10
 ---
 
 Welcome to the Biological Sciences Dungeon!
