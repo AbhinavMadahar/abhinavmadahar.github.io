@@ -1,13 +1,30 @@
-TREASURE_HUNT_ITEMS=treasure-hunt treasure-hunt/index.html treasure-hunt/treasure-hunt.css treasure-hunt/locations/cb.html $(addprefix treasure-hunt/badges/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/badges/*.png))))) $(addprefix treasure-hunt/regions/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/regions/*.png))))) $(addprefix treasure-hunt/locations/, $(addsuffix .html, $(notdir $(basename $(wildcard src/treasure-hunt/locations/*.md)))))
+TREASURE_HUNT_ITEMS=treasure-hunt/index.html treasure-hunt/treasure-hunt.css treasure-hunt/locations/cb.html $(addprefix treasure-hunt/badges/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/badges/*.png))))) $(addprefix treasure-hunt/regions/, $(addsuffix .png, $(notdir $(basename $(wildcard src/treasure-hunt/regions/*.png))))) $(addprefix treasure-hunt/locations/, $(addsuffix .html, $(notdir $(basename $(wildcard src/treasure-hunt/locations/*.md)))))
 BLOG_ITEMS=blog $(addprefix blog/, $(addsuffix .html, $(notdir $(basename $(wildcard src/blog/*.md)))))
+EVERY_ITEMS=every.html every.css every/figs/people.png
 
-all: index.html styles.css ${TREASURE_HUNT_ITEMS} $(BLOG_ITEMS)
+all: index.html styles.css ${TREASURE_HUNT_ITEMS} $(BLOG_ITEMS) $(EVERY_ITEMS)
 
 index.html: src/home.html src/include/header.html src/include/footer.html
 	cat src/include/header.html src/home.html src/include/footer.html >index.html
 
 styles.css: src/styles.css
 	cp src/styles.css styles.css
+
+every.html: src/every/every.md
+	pandoc src/every/every.md -o every.html -s --template src/every/every.template.html
+
+every.css: src/every/every.css
+	cp src/every/every.css .
+
+every:
+	mkdir every
+
+every/figs: every
+	mkdir every/figs
+
+every/figs/%.png: src/every/data/people.csv src/every/figures.py every/figs
+	cd src/every/; . env/bin/activate; python figures.py
+	cp src/every/figs/* every/figs
 
 blog:
 	mkdir blog

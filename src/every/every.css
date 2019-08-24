@@ -1,0 +1,12 @@
+body {
+	margin-left: 10vw;
+	margin-right: 10vw;
+
+	font-family: Helvetica, sans-serif;
+
+	background: linear-gradient(28deg, rgba(255,0,174,1) 0%, rgba(255,237,0,1) 100%) fixed;
+}
+
+img {
+	width: 100%;
+}
