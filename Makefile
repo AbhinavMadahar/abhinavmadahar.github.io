@@ -33,6 +33,9 @@ blog/%.html: src/blog/%.md src/blog-template.html
 	cat src/include/header.html $< src/include/footer.html | \
 		pandoc -o blog/$(notdir $(basename $<)).html -s --template src/blog-template.html
 
+blog/%.html: src/blog/%.html src/blog-template.html
+	cat src/include/header.html $< src/include/footer.html >blog/$(notdir $(basename $<)).html
+
 treasure-hunt:
 	mkdir -p treasure-hunt
 
