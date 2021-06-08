@@ -17,6 +17,10 @@ It's more of a matter of personal opinion, and I might remove this.*/
   padding-right: 0.1em;
 }
 
+a {
+  text-decoration: none;
+}
+
 #name {
   background: yellow;
 }
