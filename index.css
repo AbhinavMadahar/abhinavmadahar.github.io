@@ -60,6 +60,19 @@ h3, h4, h5, h6, p {
   animation: AnimatedGradient 15s ease infinite;
 }
 
+#about-me {
+  background: linear-gradient(0deg, #e199ff, #9e8cff);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimatedGradient 15s ease infinite;
+  -moz-animation: AnimatedGradient 15s ease infinite;
+  animation: AnimatedGradient 15s ease infinite;
+}
+
+#about-me p {
+  color:#0c2658;
+}
+
 #abhinav {
   display: block;
   margin-left: auto;
