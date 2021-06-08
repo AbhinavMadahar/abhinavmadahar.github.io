@@ -25,15 +25,30 @@ a {
   background: yellow;
 }
 
-#name h1, h2 {
+h1, h2 {
   text-align: center;
   
   padding-top: 1em;
+  padding-bottom: 10vw;
   
   color: white;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   -webkit-text-stroke: 1px black;
   text-shadow: 0.1em 0.1em black;
+}
+
+h3, h4, h5, h6, p {
+  color: black;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+}
+
+.section {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.section:not(:last-child) {
+  padding-bottom: 1em;
 }
 
 #name {
@@ -48,11 +63,11 @@ a {
 #abhinav {
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
   margin-bottom: 0px;
 
   max-width: 100vh;
-  max-height: 80vh;
+  max-height: calc(100vh - 10vh - 1em - 10em);
 }
 
 #name div {
