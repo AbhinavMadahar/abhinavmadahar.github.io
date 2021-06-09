@@ -6,9 +6,23 @@ It's more of a matter of personal opinion, and I might remove this.*/
   padding: 0;
 }
 
+html {
+  -ms-scroll-snap-type: y proximity;
+  scroll-snap-type: y proximity;
+}
+
 .page {
+  scroll-snap-align: start;
+
   width: 100%;
   height: 100vh;
+
+  overflow: hidden;
+}
+
+.page p {
+  max-width: 30em;
+  text-align: justify;
 }
 
 .shortcut {
@@ -67,6 +81,21 @@ h3, h4, h5, h6, p {
   -webkit-animation: AnimatedGradient 15s ease infinite;
   -moz-animation: AnimatedGradient 15s ease infinite;
   animation: AnimatedGradient 15s ease infinite;
+}
+
+#tech {
+  background: linear-gradient(0deg, #c8f7fd, #c9fdc8);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimatedGradient 15s ease infinite;
+  -moz-animation: AnimatedGradient 15s ease infinite;
+  animation: AnimatedGradient 15s ease infinite;
+}
+
+#tech h2,
+#tech h3,
+#tech p {
+  color: #0C85E8
 }
 
 #about-me p {
