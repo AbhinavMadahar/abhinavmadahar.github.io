@@ -7,8 +7,8 @@ It's more of a matter of personal opinion, and I might remove this.*/
 }
 
 html {
-  -ms-scroll-snap-type: y proximity;
-  scroll-snap-type: y proximity;
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 .page {
