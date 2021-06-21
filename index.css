@@ -6,23 +6,56 @@ It's more of a matter of personal opinion, and I might remove this.*/
   padding: 0;
 }
 
-html {
-  -ms-scroll-snap-type: y proximity;
-  scroll-snap-type: y proximity;
+@media only screen and (min-width: 30em) {
+  html {
+    -ms-scroll-snap-type: y proximity;
+    scroll-snap-type: y proximity;
+  }
+  
+  .page {
+    scroll-snap-align: start;
+  }
 }
 
-.page {
-  scroll-snap-align: start;
+@media only screen and (min-width: 30em) {
+  .page {
+    width: 100%;
+    height: 100vh;
+  
+    overflow: hidden;
+  }
+}
 
-  width: 100%;
-  height: 100vh;
+@media only screen and (max-width: 29em) {
+  .page {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  
+  #name {
+    min-height: 100vh;
+  }
+}
 
-  overflow: hidden;
+.page > * {
+  margin: auto;
+  max-width: 30em;
 }
 
 .page p {
-  max-width: 30em;
   text-align: justify;
+}
+
+@media only screen and (min-width: 30em) {
+  .page >:first-child {
+    padding-top: 3em;
+  }
+}
+
+@media only screen and (max-width: 29em) {
+  .page >:first-child {
+    padding-top: 0em;
+  }
 }
 
 .shortcut {
@@ -42,13 +75,16 @@ a {
 h1, h2 {
   text-align: center;
   
-  padding-top: 1em;
-  padding-bottom: 10vw;
+  padding-bottom: 1em;
   
   color: white;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
   -webkit-text-stroke: 1px black;
   text-shadow: 0.1em 0.1em black;
+}
+
+#name h1 {
+  padding-bottom: 1em;
 }
 
 h3, h4, h5, h6, p {
