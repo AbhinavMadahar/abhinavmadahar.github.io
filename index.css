@@ -50,6 +50,10 @@ It's more of a matter of personal opinion, and I might remove this.*/
   .page >:first-child {
     padding-top: 3em;
   }
+  
+  #name >:first-child {
+    padding-top: 1em;
+  }
 }
 
 @media only screen and (max-width: 29em) {
@@ -85,6 +89,7 @@ h1, h2 {
 
 #name h1 {
   padding-bottom: 1em;
+  font-size: 3em;
 }
 
 h3, h4, h5, h6, p {
