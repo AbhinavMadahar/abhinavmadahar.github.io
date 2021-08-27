@@ -4,16 +4,61 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
     <title>Everyone in SF</title>
   </head>
   <body>
     <h1>I'm trying to meet everyone in San Francisco</h1>
 
+    <div id="people-met-cumulatively"><!--populated by javascript--></div>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script>
       (async () => {
-        const data = await fetch('https://abhinavmadahar.com/data.csv');
-        console.log(data);
+        const datafile = await (await fetch('https://abhinavmadahar.com/everyone/data.csv')).text();
+        const data = datafile.split('\n').slice(1).map(line => line.split(','));
+        const people = data.map(line => ({ date: line[0], neighborhood: line[1] }));
+
+        const firstDate = people[0].date;
+        const lastDate = people[people.length-1].date;
+
+        const nextDate = (date) => {
+          const [year, month, day] = date.split('-');
+          const leapYear = year % 4 === 0 && year % 100 !== 0;
+          const lengthOfMonth = [undefined, 31, leapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+          return (
+            day + 1 > lengthOfMonth ?
+              month === 12 ?
+                [year + 1, 1, 1]
+              :
+                [year, month + 1, 1]
+            :
+              [year, month, day + 1]
+          ).join('-')
+        }
+
+        const peopleMetPerDate = [];
+        for (let date = firstDate; date <= lastDate; date = nextDate(date)) {
+          peopleMetPerDate.push({ date, people: people.filter(p => p.date === date).length });
+        }
+
+        const dataPoints = peopleMetPerDate.map(date => ({ y: date.people, indexLabel: date.date }));
+
+        const chart = new CanvasJS.Chart("people-met-cumulatively", {
+          animationEnabled: true,
+          theme: "light2",
+          title:{
+            text: "People I've met cumulatively"
+          },
+          data: [{
+            type: "line",
+            indexLabelFontSize: 16,
+            dataPoints
+          }]
+        });
+        chart.render();
       })();
     </script>
   </body>
