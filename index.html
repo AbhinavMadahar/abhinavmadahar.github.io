@@ -16,8 +16,7 @@
         <div class="pages">
             <div id="name" class="page">
                 <header>
-                    <h1>ABHINAV<br />MADAHAR</h1>
-                    <span class="subtitle">San Francisco, California</span>
+                    <h1 id="displayed-name">ABHINAV MADAHAR</h1>
                 </header>
                 <div>
                     <a href="https://linkedin.com/in/abhinavmadahar">
@@ -37,5 +36,14 @@
                 <img id="abhinav" alt="Abhinav!" src="abhinav.png" />
             </div>
         </div>
+        <script>
+            const nameElement = document.getElementById('displayed-name');
+            const names = ['ABHINAV MADAHAR', 'अभिनव मदाहर', '马大哈阿笔那', '마다할아비날', 'ابىنو مدار', 'Абинав Мадар'];
+            const updateName = (i) => {
+                nameElement.innerHTML = names[i];
+                setTimeout(() => updateName((i + 1) % names.length), 2000);
+            }
+            updateName(0);
+        </script>
     </body>
 </html>

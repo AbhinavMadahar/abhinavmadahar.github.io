@@ -6,6 +6,11 @@ It's more of a matter of personal opinion, and I might remove this.*/
   padding: 0;
 }
 
+#displayed-name {
+  padding-top: 1em;
+  max-height: 1em;
+}
+
 @media only screen and (min-width: 30em) {
   .page {
     width: 100%;
