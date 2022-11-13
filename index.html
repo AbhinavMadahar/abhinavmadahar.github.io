@@ -8,18 +8,40 @@
         <title>Abhinav Madahar</title>
 
         <style>
-            #face {
-                max-width: 100%;
-            }
-
             .left {
                 float: left;
-                width: 50%
+                width: 70%;
             }
 
             .right {
                 float: right;
-                width: 50%;
+                width: 30%;
+            }
+
+            .quicklinks {
+                text-align: center;
+            }
+
+            .quicklinks img {
+                height: 2em;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            h1 {
+                text-align: center;
+                font-variant: small-caps;
+            }
+
+            #face {
+                max-width: 100%;
+                clip-path: circle();
             }
         </style>
     </head>
@@ -27,20 +49,24 @@
         <div>
             <div class="left">
                 <h1>Abhinav Madahar</h1>
-                <p>Email: <a href="mailto:abhinavmadahar@gmail.com">abhinavmadahar@gmail.com</a></p>
+                <div class="quicklinks">
+                    <a href="https://github.com/abhinavmadahar">
+                        <img src="icons/github.png" />
+                    </a>
+                    <a href="https://linkedin.com/in/abhinavmadahar">
+                        <img src="icons/linkedin.png" />
+                    </a>
+                    <a href="https://twitter.com/abhinavmadahar">
+                        <img src="icons/twitter.png" />
+                    </a>
+                    <a href="mailto:abhinavmadahar@gmail.com">
+                        <img src="icons/email.png" />
+                    </a>
+                </div>
             </div>
             <div class="right">
                 <img id="face" src="abhinav.png" />
             </div>
         </div>
-
-        <!--TODO: add news-->
-        <!--TODO: add research in industry-->
-        <!--TODO: add research in academia-->
-        <!--TODO: add non-research work-->
-        <!--TODO: add awards section-->
-        <!--TODO: add short bio-->
-        <!--TODO: add personal section-->
-            <!--TODO: add map of every flight I've ever taken-->
     </body>
 </html>
