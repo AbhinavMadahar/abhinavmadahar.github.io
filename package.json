@@ -1,0 +1,17 @@
+{
+  "name": "abhinavmadahar.github.io",
+  "version": "1.0.0",
+  "description": "It's me!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinavmadahar/abhinavmadahar.github.io.git"
+  },
+  "author": "Abhinav Madahar",
+  "bugs": {
+    "url": "https://github.com/abhinavmadahar/abhinavmadahar.github.io/issues"
+  },
+  "homepage": "https://github.com/abhinavmadahar/abhinavmadahar.github.io#readme"
+}
